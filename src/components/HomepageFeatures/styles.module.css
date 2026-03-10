@@ -1,11 +1,115 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 3rem 0 4rem;
   width: 100%;
 }
 
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 64px;
+  width: 64px;
+}
+
+.featureCol {
+  padding: 0.75rem;
+}
+
+.featureCard {
+  height: 100%;
+  background: var(--ifm-card-background-color);
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  padding: 1.5rem;
+  box-shadow: 0 14px 30px rgba(31, 41, 51, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  position: relative;
+}
+
+.featureCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(31, 41, 51, 0.1);
+  border-color: rgba(31, 41, 51, 0.12);
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(30, 136, 255, 0), rgba(30, 136, 255, 0.6), rgba(30, 136, 255, 0));
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureCard {
+  animation: cardIn 520ms ease both;
+}
+
+.featureCol:nth-child(2) .featureCard {
+  animation-delay: 80ms;
+}
+
+.featureCol:nth-child(3) .featureCard {
+  animation-delay: 160ms;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-theme='dark'] .featureCard {
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  border-color: rgba(124, 196, 255, 0.18);
+}
+
+[data-theme='dark'] .featureIcon {
+  background: rgba(124, 196, 255, 0.12);
+  color: #7cc4ff;
+}
+
+[data-theme='dark'] .featureText p {
+  color: #a6b3c4;
+}
+
+.featureIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: #eef4ff;
+  color: #2ba3ff;
+  margin-bottom: 1rem;
+}
+
+.featureText {
+  text-align: left;
+}
+
+.featureText h3 {
+  margin-bottom: 0.5rem;
+}
+
+.featureText p {
+  color: #5a6b7a;
+  margin-bottom: 0;
 }

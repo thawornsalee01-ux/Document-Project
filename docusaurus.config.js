@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Document Version Compare',
   tagline: 'AI เปรียบเทียบเวอร์ชั่นเอกสาร',
-  favicon: 'img/ic_compare_128_28291.ico',
+  favicon: 'img/compare_4222.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -86,7 +86,7 @@ const config = {
         title: 'Document Version Compare',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/ic_compare_128_28291.png',
+          src: 'img/compare_4222.ico',
         },
         items: [
           {
@@ -104,8 +104,24 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Document Version Compare',
                 to: '/docs/intro',
+              },
+              {
+                label: 'API',
+                to: '/docs/API',
+              },
+              {
+                label: 'กระบวนการทำงาน',
+                to: '/docs/กระบวนการทำงาน/ภาพรวมกระบวนการ',
+              },
+              {
+                label: 'การติดตั้ง',
+                to: '/docs/การติดตั้ง/Docker',
+              },
+              {
+                label: 'วิธีใช้งาน',
+                to: '/docs/วิธีใช้งาน/การอัพโหลดไฟล์เปรียบเทียบเอกสาร',
               },
             ],
           },
